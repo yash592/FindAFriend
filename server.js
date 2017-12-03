@@ -2,7 +2,7 @@
 
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var path = require("path");
 // Express config
 
 var app = express();
@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 
 // routes
 
-require(".app/routing/apiRoutes")(app);
-require(".app/routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // Listeners
 

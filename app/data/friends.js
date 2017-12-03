@@ -1,93 +1,50 @@
-var cats = [
+var catsArray = [
 
 {
 	"name": "Garfield",
 	"photo": "",
-	"scores": [
+	"scores": ["5", "4", "3", "2", "1"],
 
-	]
+
 
 },
 
 {
 	"name": "Lenny",
 	"photo": "",
-	"scores": [
+	"scores": ["1", "2", "3", "4", "5"],
 
-	]
+	
 
 },
 
 {
 	"name": "Bruce",
 	"photo": "",
-	"scores": [
+	"scores":  ["2", "3", "4", "5", "1"],
 
-	]
+	
 
 },
 
 {
 	"name": "Kittu",
 	"photo": "",
-	"scores": [
+	"scores":  ["3", "4", "5", "2", "1"],
 
-	]
+	
 
 },
 
 {
 	"name": "Pingu",
 	"photo": "",
-	"scores": [
+	"scores":  ["4", "5", "3", "2", "1"],
 
-	]
+	
 
-},
+}
 
-{
-	"name": "Wiz",
-	"photo": "",
-	"scores": [
+];
 
-	]
-
-},
-
-{
-	"name": "Ecko",
-	"photo": "",
-	"scores": [
-
-	]
-
-},
-
-{
-	"name": "Caramel",
-	"photo": "",
-	"scores": [
-
-	]
-
-},
-
-{
-	"name": "Kiki",
-	"photo": "",
-	"scores": [
-
-	]
-
-},
-
-{
-	"name": "Lad",
-	"photo": "",
-	"scores": [
-
-	]
-
-},
-
-]
+module.exports = catsArray;
