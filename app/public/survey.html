@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +33,7 @@
 		<hr>
 
 		<h3><strong>Question 1</strong></h3>
-		<h4>You don't mind your furniture being scratched</h4>
+		<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q1">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -45,7 +44,7 @@
       	</select>
 
 		<h3><strong>Question 2</strong></h3>
-		<h4>You like a cat who welcomes you home after some time away</h4>
+		<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q2">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -57,7 +56,7 @@
 
 
 		<h3><strong>Question 3</strong></h3>
-		<h4>You like a cat who doesn't bother you too much</h4>
+		<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q3">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -69,7 +68,7 @@
 
 
 		<h3><strong>Question 4</strong></h3>
-		<h4>You need a lot of attention from your feline</h4>
+		<h4>You rarely do something just out of sheer curiosity.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q4">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -90,6 +89,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
+
+
 		
 
 		<br>
@@ -132,8 +133,6 @@
 
   <script type="text/javascript">
 
-  	var userArray = [];
-
   	// Chosen CSS
     var config = {
       '.chosen-select'           : {},
@@ -142,12 +141,15 @@
       '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
       '.chosen-select-width'     : {width:"95%"}
     }
+
     for (var selector in config) {
       $(selector).chosen(config[selector]);
     }
 
     // Capture the form inputs 
-    $("#submit").on("click", function() {
+    $("#submit").on("click", function(){
+
+    	var userArray = [];
 
     	// Form validation
     	function validateForm() {
@@ -170,22 +172,21 @@
 		{
 			// Create an object for the user's data
 	    	var userData = {
-	    		name: $("#name").val(),	    		
-	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), ]
+	    		name: $("#name").val(),
+	    		
+	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val() ]
 	    	}
 
 	    	userArray.push(userData);
 
-	    	console.log(userData);
-
-	    	console.log(userArray);
+	    	// console.log(userArray);
 
 
 	    	// Grab the URL of the website
 	    	var currentURL = window.location.origin;
 
 	    	// AJAX post the data to the friends API. 
-	    	$.post(currentURL + "/api/friends", userData, function(data){
+	    	$.post("/api/user", userData, function(data) {
 
 	    		// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 	    		$("#matchName").text(data.name);

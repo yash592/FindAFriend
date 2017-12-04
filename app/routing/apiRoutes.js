@@ -6,7 +6,8 @@ var path = require("path");
 
 var app = express();
 
-var catData = require("../data/friends");
+var catData = require("../data/cats");
+
 
 // console.log(catData);
 
@@ -18,21 +19,19 @@ var catData = require("../data/friends");
 
 module.exports = function(app) {
 
-	// =====================================
-
-	// GET requests
-
-	// =====================================
-
-	app.get("/api/cats", function(req, res) {
-		res.json(catData);
-	});
-
+	
 
 	// ====================================
 
 	// POST requests
 
 	// ====================================
+
+	app.post("/api/user", function(req, res) {
+
+		var userScores = req.body;
+
+		console.log(userScores);
+	});
 
 }; //  module.exports ends here
