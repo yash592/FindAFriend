@@ -1,7 +1,7 @@
 var catsArray = [
 
 {
-	"name": "Garfield",
+	"name": "Gaf",
 	"photo": "",
 	"scores": ["5", "4", "3", "2", "1"],
 

@@ -29,9 +29,37 @@ module.exports = function(app) {
 
 	app.post("/api/user", function(req, res) {
 
-		var userScores = req.body;
+		var diffArr = [];
+
+
+		var userScores = req.body.scores;
 
 		console.log(userScores);
+		console.log(catData);
+
+		for (var i = 0; i < 5; i ++) {
+
+			for(var j = 0; j < userScores.length; j++) {
+
+				var diff = Math.abs(parseInt(userScores[i]) - parseInt(catData[j].scores[i]));
+				
+
+			}
+
+			diffArr.push(diff);
+
+			console.log(diffArr);
+
+			
+			
+
+		}
+
+
+
+		
+
+		
 	});
 
 }; //  module.exports ends here
