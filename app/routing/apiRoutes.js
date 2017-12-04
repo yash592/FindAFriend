@@ -59,7 +59,7 @@ module.exports = function(app) {
 
 	// }		
 
-	res.json(diff);
+
 
 		
 
