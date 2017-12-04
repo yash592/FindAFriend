@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-// Listeners
+// Listeners on PORT
 
 app.listen(PORT, function() {
 	console.log("Listening on PORT " + PORT);
