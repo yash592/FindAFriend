@@ -37,25 +37,29 @@ module.exports = function(app) {
 		console.log(userScores);
 		console.log(catData);
 
-		for (var i = 0; i < 5; i ++) {
+		
+        // for (var i = 0; i < 5; i ++) {
 
-			for(var j = 0; j < userScores.length; j++) {
 
-				var diff = Math.abs(parseInt(userScores[i]) - parseInt(catData[j].scores[i]));
+        	for(var j = 0; j < 5; j++) {		
+
+			
+
+				var diff = Math.abs(parseInt(userScores[2]) - parseInt(catData[0].scores[0]));
 				
 
 			}
 
+
+
 			diffArr.push(diff);
 
-			console.log(diffArr);
-
-			
+			console.log(diffArr);			
 			
 
-		}
+	// }		
 
-
+	res.json(diff);
 
 		
 
